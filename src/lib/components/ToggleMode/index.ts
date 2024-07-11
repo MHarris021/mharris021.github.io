@@ -1,4 +1,4 @@
-import Root from './toggleMode.svelte';
+import Root from './ToggleMode.svelte';
 
 export {
   Root,

@@ -5,11 +5,8 @@
   import { mode, toggleMode } from 'mode-watcher';
   import { Switch } from '$lib/components/ui/switch';
 
-  $effect(() => {
-    console.info(`Theme: ${$mode}`);
-  });
+  $inspect($mode, 'mode');
 
-  export { mode };
 </script>
 
 <div class="flex items-center space-x-3">
