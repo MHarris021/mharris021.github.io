@@ -1,16 +1,16 @@
 <script lang="ts">
   import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip/index.js';
-  import type { Icon } from 'lucide-svelte';
-  import type { ComponentType } from 'svelte';
+  import type { NavItemProp } from '$lib/components/types';
 
   type Props = {
-    url: string,
-    icon: ComponentType<Icon>,
-    srDescription: string,
-    content: string
+    navItem: NavItemProp;
   };
 
-  let { url, link, icon, srDescription, content }: Props = $props();
+  let { navItem }: Props = $props();
+
+  // $inspect(navItem, 'navItem');
+
+  let { url, icon, title, srDesc } = navItem;
 
 </script>
 
@@ -22,8 +22,8 @@
        {...builder}
     >
       <svelte:component this={icon} class="h-5 w-5 text-primary dark:text-primary-dark" />
-      <span class="sr-only">{srDescription}</span>
+      <span class="sr-only">{srDesc}</span>
     </a>
   </TooltipTrigger>
-  <TooltipContent side={"right"}>{content}</TooltipContent>
+  <TooltipContent side={"right"}>{title}</TooltipContent>
 </Tooltip>
