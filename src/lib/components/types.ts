@@ -6,6 +6,8 @@ export type NavItemProp = {
   url: string;
   srDesc: string;
   icon: ComponentType<Icon>;
+  active?: boolean;
+  separated?: boolean;
 };
 
 export type NavItemsProp = {

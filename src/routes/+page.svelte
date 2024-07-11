@@ -3,6 +3,9 @@
 </script>
 
 
-<title>Home</title>
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<title>Techno-Wizardry</title>
+<div class="grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
+  <h1 class="text-4xl font-bold">Welcome to the World of the Techno-Wizard</h1>
+
+  <p>That's me, Michael Harris</p>
+</div>

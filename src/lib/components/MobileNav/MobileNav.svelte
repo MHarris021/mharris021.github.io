@@ -5,6 +5,7 @@
   import { SheetContent } from '$lib/components/ui/sheet/index.js';
   import MobileNavItem from '$lib/components/MobileNav/MobileNavItem.svelte';
   import type { NavItemProp } from '$lib/components/types';
+  import { Separator } from '$lib/components/ui/separator';
 
   type Props = {
     navItems: NavItemProp[]
@@ -13,6 +14,16 @@
   let { navItems }: Props = $props();
 
   $inspect(navItems, 'navItems');
+
+  let separatedItems: NavItemProp[] = [];
+  let mainItems: NavItemProp[] = [];
+  navItems.forEach((navItem, i) => {
+    if (navItem.separated) {
+      separatedItems.push(navItem);
+    } else {
+      mainItems.push(navItem);
+    }
+  });
 
 </script>
 
@@ -25,7 +36,13 @@
   </SheetTrigger>
   <SheetContent side="left" class="sm:max-w-xs">
     <nav class="grid gap-6 text-lg font-medium">
-      {#each navItems as navItem, i}
+      {#each mainItems as navItem, i}
+        <MobileNavItem navItem={navItem} />
+      {/each}
+    </nav>
+    <Separator class="my-4" />
+    <nav class="grid gap-6 text-lg font-medium">
+      {#each separatedItems as navItem, i}
         <MobileNavItem navItem={navItem} />
       {/each}
     </nav>

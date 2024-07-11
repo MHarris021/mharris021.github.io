@@ -3,15 +3,29 @@
   import { ModeWatcher } from 'mode-watcher';
   import { SiteNav } from '$lib/components/SiteNav';
   import { Header } from '$lib/components/Header';
-  import { BookOpen, BrainCircuit, Fingerprint, FolderKanban, Home } from 'lucide-svelte';
+  import {
+    BookOpen,
+    BrainCircuit,
+    Contact,
+    Fingerprint,
+    FolderKanban,
+    GitFork,
+    Home,
+    MessageCircleMore,
+    Settings
+  } from 'lucide-svelte';
   import type { NavItemProp } from '$lib/components/types';
 
   let navItems: NavItemProp[] = [
     { url: '/', icon: Home, srDesc: 'Home', title: 'Home' },
-    { url: '/bio', icon: Fingerprint, srDesc: 'Bio', title: 'Bio' },
+    { url: '/about', icon: Fingerprint, srDesc: 'About', title: 'About' },
     { url: '/blog', icon: BookOpen, srDesc: 'Blog', title: 'Blog' },
+    { url: '/contact', icon: Contact, srDesc: 'Contact', title: 'Contact' },
     { url: '/projects', icon: FolderKanban, srDesc: 'Projects', title: 'Projects' },
-    { url: '/skills', icon: BrainCircuit, srDesc: 'Skills', title: 'Skills' }
+    { url: '/repos', icon: GitFork, srDesc: 'Repos', title: 'Repos' },
+    { url: '/settings', icon: Settings, srDesc: 'Settings', title: 'Settings', separated: true },
+    { url: '/skills', icon: BrainCircuit, srDesc: 'Skills', title: 'Skills' },
+    { url: '/social', icon: MessageCircleMore, srDesc: 'Social', title: 'Social' }
   ];
 </script>
 
