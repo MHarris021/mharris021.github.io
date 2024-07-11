@@ -10,7 +10,7 @@
   let { navItems }: Props = $props();
   let separatedItems: NavItemProp[] = [];
   let mainItems: NavItemProp[] = [];
-  navItems.forEach((navItem, i) => {
+  navItems.forEach((navItem) => {
     if (navItem.separated) {
       separatedItems.push(navItem);
     } else {
