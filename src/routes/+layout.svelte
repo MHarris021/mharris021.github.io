@@ -15,6 +15,7 @@
     Settings
   } from 'lucide-svelte';
   import type { NavItemProp } from '$lib/components/types';
+  import { setBreadCrumbsState } from '$lib/components/BreadCrumbs';
 
   let navItems: NavItemProp[] = [
     { url: '/', icon: Home, srDesc: 'Home', title: 'Home' },
@@ -27,6 +28,9 @@
     { url: '/skills', icon: BrainCircuit, srDesc: 'Skills', title: 'Skills' },
     { url: '/social', icon: MessageCircleMore, srDesc: 'Social', title: 'Social' }
   ];
+
+  let breadCrumbsState = setBreadCrumbsState();
+  $inspect(breadCrumbsState, 'breadCrumbsState root layout');
 </script>
 
 <ModeWatcher />

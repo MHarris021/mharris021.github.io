@@ -13,3 +13,9 @@ export type NavItemProp = {
 export type NavItemsProp = {
   items: NavItemProp[];
 };
+
+export type Crumb = {
+  label: string;
+  href?: string;
+  id: string;
+};

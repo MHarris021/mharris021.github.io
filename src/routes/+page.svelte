@@ -1,5 +1,13 @@
 <script lang="ts">
 
+  import { getBreadCrumbsState } from '$lib/components/BreadCrumbs';
+  import { onMount } from 'svelte';
+
+  const breadCrumbState = getBreadCrumbsState();
+  onMount(() => {
+    breadCrumbState.add({ label: 'Home', href: '/' });
+  });
+
 </script>
 
 

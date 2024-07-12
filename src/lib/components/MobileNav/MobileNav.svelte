@@ -13,7 +13,7 @@
 
   let { navItems }: Props = $props();
 
-  $inspect(navItems, 'navItems');
+  // $inspect(navItems, 'navItems');
 
   let separatedItems: NavItemProp[] = [];
   let mainItems: NavItemProp[] = [];
@@ -34,14 +34,14 @@
       <span class="sr-only">Toggle Navigation</span>
     </Button>
   </SheetTrigger>
-  <SheetContent side="left" class="sm:max-w-xs">
-    <nav class="grid gap-6 text-lg font-medium">
+  <SheetContent side="left" class="flex flex-col sm:max-w-xs">
+    <nav class="mt-auto grid gap-4 text-lg font-medium items-start flex-1">
       {#each mainItems as navItem, i}
         <MobileNavItem navItem={navItem} />
       {/each}
     </nav>
     <Separator class="my-4" />
-    <nav class="grid gap-6 text-lg font-medium">
+    <nav class="mt-auto grid gap-4 text-lg font-medium items-end">
       {#each separatedItems as navItem, i}
         <MobileNavItem navItem={navItem} />
       {/each}
