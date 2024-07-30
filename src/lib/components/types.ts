@@ -1,11 +1,11 @@
-import type { ComponentType } from 'svelte';
+import type { Component } from 'svelte';
 import type { Icon } from 'lucide-svelte';
 
 export type NavItemProp = {
   title: string;
   url: string;
   srDesc: string;
-  icon: ComponentType<Icon>;
+  icon: Component<Icon>;
   active?: boolean;
   separated?: boolean;
 };

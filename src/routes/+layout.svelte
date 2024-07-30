@@ -16,6 +16,7 @@
   } from 'lucide-svelte';
   import type { NavItemProp } from '$lib/components/types';
   import { setBreadCrumbsState } from '$lib/components/BreadCrumbs';
+  import { ChangeLog, setChangeLogState } from '$lib/components/ChangeLog';
 
   let navItems: NavItemProp[] = [
     { url: '/', icon: Home, srDesc: 'Home', title: 'Home' },
@@ -31,6 +32,8 @@
 
   let breadCrumbsState = setBreadCrumbsState();
   $inspect(breadCrumbsState, 'breadCrumbsState root layout');
+
+  let changeLogState = setChangeLogState('Stuff goes here');
 </script>
 
 <ModeWatcher />
@@ -42,6 +45,7 @@
       class="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3"
     >
       <slot></slot>
+      <ChangeLog />
     </main>
   </div>
 </div>
